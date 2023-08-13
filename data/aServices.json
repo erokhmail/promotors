@@ -1,0 +1,47 @@
+[
+    {
+        "icon": "icons/a-brake.svg",
+        "title": "Brake Repair",
+        "link": "/services/single-service"
+    },
+    {
+        "icon": "icons/a-engine.svg",
+        "title": "Engine Repair",
+        "link": "/services/single-service"
+    },
+    {
+        "icon": "icons/a-tire.svg",
+        "title": "Tire Repair",
+        "link": "/services/single-service"
+    },
+    {
+        "icon": "icons/a-cool.svg",
+        "title": "Cool Repair",
+        "link": "/services/single-service"
+    },
+    {
+        "icon": "icons/a-but.svg",
+        "title": "BATTERIES",
+        "link": "/services/single-service"
+    },
+    {
+        "icon": "icons/a-clutch.svg",
+        "title": "Clutch replacement",
+        "link": "/services/single-service"
+    },
+    {
+        "icon": "icons/a-diagn.svg",
+        "title": "Car diagnostics",
+        "link": "/services/single-service"
+    },
+    {
+        "icon": "icons/a-steer.svg",
+        "title": "Steering",
+        "link": "/services/single-service"
+    },
+    {
+        "icon": "icons/a-tim.svg",
+        "title": "Timing belt",
+        "link": "/services/single-service"
+    }
+]

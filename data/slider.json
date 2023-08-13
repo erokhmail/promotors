@@ -1,0 +1,47 @@
+[
+    {
+        "slide": {
+                    "image": "slides/slide1.jpg",
+                    "sup": "car",
+                    "sub": "repair",
+                    "title": "Auto Maintenance & Repair Service",
+                    "description": "Dedicated to Keeping Your Vehicle Safe, Reliable, and Roadworthy",
+                    "button": "get service",
+                    "link": "/services/single-service"
+                }
+    },
+    {
+        "slide": {
+                    "image": "slides/slide1.jpg",
+                    "sup": "car",
+                    "sub": "repair",
+                    "title": "Preserving Your Investment",
+                    "description": "Protecting Your Vehicle's Value through Professional Maintenance",
+                    "button": "get service",
+                    "link": "/services/single-service"
+                }
+    },
+    {
+        "slide": {
+                    "image": "slides/slide1.jpg",
+                    "sup": "car",
+                    "sub": "repair",
+                    "title": "Engineered for Excellence",
+                    "description": "Enhancing Longevity and Efficiency with our Auto Service Expertise",
+                    "button": "get service",
+                    "link": "/services/single-service"
+                }
+    },
+    {
+        "slide": {
+                    "image": "slides/slide1.jpg",
+                    "sup": "car",
+                    "sub": "repair",
+                    "title": "Safety in Every single Mile",
+                    "description": "Ensuring Secure Journeys with our Comprehensive Auto Care Solutions",
+                    "button": "get service",
+                    "link": "/services/single-service"
+                }
+    }
+
+]

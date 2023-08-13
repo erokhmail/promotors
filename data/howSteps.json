@@ -1,0 +1,10 @@
+{
+    "step_1" : "<span>01</span> make an appointment",
+    "descr_1": "Scheduling regular appointments for car maintenance is crucial to keep your vehicle in top shape.",
+    "step_2" : "<span>02</span> Select service",
+    "descr_2": "Whether it's a routine checkup, engine repair, tire replacement, or any other maintenance task, our expert technicians are here to help. ",
+    "step_3" : "<span>03</span> Confirm request",
+    "descr_3": "With a simple confirmation, you're one step closer to keeping your vehicle in excellent condition.",
+    "step_4" : "<span>04</span> get your car",
+    "descr_4": "After our skilled technicians complete the service, it's time to retrieve your car. "
+}

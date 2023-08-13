@@ -1,0 +1,20 @@
+{
+    "windowTitle" : "Contacts | Promotors",
+    "home": "Home",
+    "title": "Contacts",
+    "ad_title": "ADDRESS",
+    "ad_adress1": "19 Frisk Drive, Middletown,nj, 3348 United States",
+    "ad_ad_link1": "https://www.google.com.ua/maps/place/%D1%83%D0%BB.+%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%B0+%D0%A1%D0%BA%D0%BB%D1%8F%D1%80%D0%B5%D0%BD%D0%BA%D0%BE,+9,+%D0%9A%D0%B8%D0%B5%D0%B2,+02000/@50.4942627,30.4636338,17z/data=!3m1!4b1!4m6!3m5!1s0x40d4cd8d9603e811:0x1705263ec20276a2!8m2!3d50.4942593!4d30.4662087!16s%2Fg%2F1tgr_g5l?hl=ru&entry=ttu",
+    "ad_adress2": "31 S Division Street, Montour,ia, 50133 United States",
+    "ad_ad_link2": "https://www.google.com.ua/maps/place/%D1%83%D0%BB.+%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%B0+%D0%A1%D0%BA%D0%BB%D1%8F%D1%80%D0%B5%D0%BD%D0%BA%D0%BE,+9,+%D0%9A%D0%B8%D0%B5%D0%B2,+02000/@50.4942627,30.4636338,17z/data=!3m1!4b1!4m6!3m5!1s0x40d4cd8d9603e811:0x1705263ec20276a2!8m2!3d50.4942593!4d30.4662087!16s%2Fg%2F1tgr_g5l?hl=ru&entry=ttu",
+    "cont_title": "CONTACT US",
+    "ho_title": "Open HOURS",
+    "ho_day1": "Monday - Thuesday",
+    "ho_ho1": "8 am - 8 pm",
+    "ho_day2": "Friday",
+    "ho_ho2": "8 am - 6 pm",
+    "ho_day3": "Saturday",
+    "ho_ho3": "8 am - 8 pm",
+    "ho_day4": "Sunday",
+    "ho_ho4": "Closed"
+}
