@@ -1,0 +1,20 @@
+[
+    {
+        "sup": "Service",
+        "title": "Car Exterior Cleaning: Basic Detailing ",
+        "image": "slides/serv-1.jpg",
+        "content": "<ul><li>Same Day Service</li><li>Convenient Location</li><li>Online Appointment </li><li>Complimentary Shuttle </li></ul>",
+        "link": "/",
+        "linkText": "Get service",
+        "direction": "ltr"
+    },
+    {
+        "sup": "Service",
+        "title": "Rubbing, Waxing, and Polishing ",
+        "image": "slides/serv-2.jpg",
+        "content": "<p>Gravida quis blandit turpis cursus in hac habitasse platea. Velit sed ullamcorper morbi tincidunt ornare massa eget. Odio morbi quis commodo odio aenean. Ut etiam sit amet nisl purus </p> ",
+        "link": "/",
+        "linkText": "Get service",
+        "direction": "rtl"
+    }
+]

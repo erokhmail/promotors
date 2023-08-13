@@ -1,0 +1,52 @@
+[
+    {
+        "h2Title": "Our services",
+        "sButton": "all services",
+        "slink": "/",
+        "service": [
+                {
+                    "icon": "icons/s-brake.svg",
+                    "title": "Brake repair",
+                    "description": "Revitalize your braking system with our specialized repair solutions. From pads to rotors, we have got your brakes covered.",
+                    "button": "details service",
+                    "link": "/"
+                },
+                {
+                    "icon": "icons/s-engine.svg",
+                    "title": "Engine repair",
+                    "description": "Ignite peak performance. Our engine repair service brings vitality back to your vehicle, ensuring a dynamic driving experience.",
+                    "button": "details service",
+                    "link": "/"
+                },
+                {
+                    "icon": "icons/s-tire.svg",
+                    "title": "Tire repair",
+                    "description": "PKeep your journey smooth. Our tire repair system service ensures optimal grip and reliable performance.",
+                    "button": "details service",
+                    "link": "/"
+                },
+                {
+                    "icon": "icons/s-cool.svg",
+                    "title": "Cooling sysytem",
+                    "description": "Engine health begins with proper cooling. Trust us for top-notch cooling system maintenance.",
+                    "button": "details service",
+                    "link": "/"
+                },
+                {
+                    "icon": "icons/s-battery.svg",
+                    "title": "Buttery repair",
+                    "description": "Charging issues? Our expert repair service rejuvenates your vehicle's power source, keeping you on the move.",
+                    "button": "details service",
+                    "link": "/"
+                },
+                {
+                    "icon": "icons/s-steer.svg",
+                    "title": "Steering repair",
+                    "description": "Regain command of your vehicle with our precise and dependable steering system repairs.",
+                    "button": "details service",
+                    "link": "/"
+                }
+            ]
+    }
+    
+]

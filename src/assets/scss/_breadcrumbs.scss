@@ -1,0 +1,94 @@
+$dark-gray-bg: #121212;
+$gray-bg: #161616;
+$light: #EDEDED;
+$aktsent: #D16527;
+
+@mixin fz($px) {
+    font-size: calc($px / 16)*1rem;
+}
+
+@mixin lh($px) {
+    line-height: calc($px / 16) * 1rem;
+}
+
+#page-head {
+    margin-top: 140px;
+    padding: 54px 0 60px 0;
+    background-color: $dark-gray-bg;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: url('../icons/top-img.svg');
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 70%;
+        left: 66%;
+    }
+
+    h1 {
+        color: $light;
+        font-family: 'Chakra Petch', sans-serif;
+        @include fz(66);
+        @include lh(73);
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .breadcrumbs {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 25px;
+        margin-bottom: 30px;
+
+        li {
+            position: relative;
+
+            &:not(:first-child) {
+                &::marker {
+                    list-style-image: none;
+                }
+
+                &::before {
+                    content: url('../images/foot-icon.png');
+                    position: absolute;
+                    left: -16px;
+                    bottom: 2px;
+                }
+            }
+
+            a {
+                color: #C2C2C2;
+                font-family: 'Chakra Petch', sans-serif;
+                @include fz(15);
+                font-weight: 600;
+                line-height: normal;
+                text-transform: uppercase;
+
+                &:hover {
+                    color: $aktsent;
+                }
+
+                &.active {
+                    color: $aktsent;
+                }
+            }
+
+            span {
+                font-family: 'Chakra Petch', sans-serif;
+                @include fz(15);
+                font-weight: 600;
+                line-height: normal;
+                text-transform: uppercase;
+                color: $aktsent;
+            }
+
+
+        }
+
+    }
+}
+
+/*-====================#Section-Top ====================-*/

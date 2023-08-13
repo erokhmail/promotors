@@ -1,0 +1,188 @@
+.faq-block {
+    padding: 63px 0 27px;
+
+    .h2-title {
+        margin-bottom: 30px;
+    }
+
+    .chevron-down {
+        margin-left: auto;
+        width: 40px;
+
+        &.down {
+            display: block;
+        }
+
+        &.up {
+            display: none;
+        }
+
+    }
+
+    .szh-accordion {
+
+        &__item {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            background-color: $dark-gray-bg;
+
+            &-btn {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                margin: 0;
+                padding: 35px 30px 14px 40px;
+                border: 0;
+                border-top: 2px solid transparent;
+                font-family: 'Chakra Petch', sans-serif;
+                @include fz(18);
+                color: $light;
+                font-weight: 700;
+                text-transform: uppercase;
+                text-align: left;
+                background-color: $dark-gray-bg;
+
+                &:hover {
+                    border-top: 2px solid $aktsent;
+                }
+            }
+
+            &-content {
+                transition: height 0.25s cubic-bezier(0, 0, 0, 1);
+            }
+
+            &-panel {
+                padding: 0 40px;
+                background-color: $dark-gray-bg;
+                @include fz(18);
+                @include lh(26);
+                font-weight: 400;
+
+
+            }
+
+            &--expanded {
+                .szh-accordion__item-btn {
+                    background-color: $dark-gray-bg;
+                }
+
+                .chevron-down {
+                    &.down {
+                        display: none;
+                    }
+
+                    &.up {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// .szh-accordion__item {
+//     width: 100%;
+//     padding: 34px 30px 21px 40px;
+//     margin: 0 auto;
+//     position: relative;
+//     border-top: 2px solid transparent;
+//     transition: all .3s ease;
+//     background-color: $dark-gray-bg;
+
+//     &:hover {
+//         border-top: 2px solid $aktsent;
+//     }
+// }
+
+// .szh-accordion__item+.szh-accordion__item {
+//     margin-bottom: 40px;
+// }
+
+// .szh-accordion__item {
+//     min-height: 50px;
+//     background-color: $dark-gray-bg;
+//     border-top: 2px solid $aktsent;
+// }
+
+// .szh-accordion__item .szh-accordion__item-panel {
+//     font-family: 'Chakra Petch', sans-serif;
+//     @include fz(18);
+//     @include lh(26);
+//     font-weight: 400;
+// }
+
+// .szh-accordion__item-heading {
+
+//     button {
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
+//         background-color: transparent;
+//         border: 0;
+//         font-family: 'Chakra Petch', sans-serif;
+//         @include fz(18);
+//         color: $light;
+//         font-weight: 700;
+//         text-transform: uppercase;
+//         padding-right: 10px;
+//         cursor: pointer;
+//         width: 90%;
+//         margin-bottom: 10px;
+//     }
+
+// }
+
+// .szh-accordion__item-heading:focus {
+//     outline: none;
+
+// }
+
+// .szh-accordion__item-heading:focus::after {
+//     content: "";
+//     height: 100%;
+//     width: 100%;
+//     display: block;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+// }
+
+// .szh-accordion__item-heading::-webkit-details-marker {
+//     display: none;
+// }
+
+// .szh-accordion__item-heading+.szh-accordion__item-panel {
+//     padding-top: 14px;
+// }
+
+// .szh-accordion__item {
+//     .szh-accordion__item-panel {
+//         margin-bottom: -7px;
+//     }
+// }
+
+// .szh-accordion__item-content {
+//     padding-top: 21px;
+//     margin-bottom: -7px;
+// }
+
+// .control-icon {
+//     fill: transparent;
+//     transition: .3s ease;
+//     pointer-events: none;
+//     transform: translate(10px, -4px);
+// }
+
+// .control-icon-close {
+//     display: none;
+// }
+
+// .szh-accordion__item[open] .control-icon-close {
+//     display: initial;
+//     transition: .3s ease;
+// }
+
+// .szh-accordion__item[open] .control-icon-expand {
+//     display: none;
+// }

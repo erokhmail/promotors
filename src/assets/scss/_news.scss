@@ -1,0 +1,229 @@
+.news-block {
+    display: grid;
+    grid-template-columns: repeat(3, 31.3%);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 77px 40px;
+
+    @media screen and (max-width: 1040px) {
+        gap: 30px 20px;
+    }
+
+    @media screen and (max-width: 991px) {
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 650px) {
+        grid-template-columns: repeat(1, 100%);
+        grid-template-rows: 1fr;
+    }
+
+
+    .article {
+        position: relative;
+
+        // @media screen and (max-width: 991px) {
+        //   margin-bottom: 30px;
+        // }
+        .details {
+            @media screen and (max-width: 450px) {
+                justify-content: flex-start;
+            }
+        }
+
+        .image-wrap {
+            aspect-ratio: 426/253;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: linear-gradient(180deg, rgba(30, 30, 30, 0.00) 0%, rgba(13, 13, 13, 0.70) 100%);
+                opacity: 1;
+                transition: all .3s ease;
+            }
+        }
+
+        .tag {
+            color: #FFF;
+            font-family: 'Chakra Petch', sans-serif;
+            @include fz(15);
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+
+            &::before {
+                content: '';
+                width: 100%;
+                height: 2px;
+                background-color: $aktsent;
+                position: absolute;
+                top: -9px;
+                left: 50%;
+                transform: translateX(-50%);
+
+            }
+        }
+
+        .title {
+            color: #FFF;
+            font-family: 'Chakra Petch', sans-serif;
+            @include fz(23);
+            @include lh(32);
+            font-style: normal;
+            font-weight: 700;
+            text-transform: uppercase;
+            max-width: 426px;
+        }
+
+        &.full {
+            grid-column: span 3;
+
+            @media screen and (max-width: 991px) {
+                grid-column: span 2;
+            }
+
+            @media screen and (max-width: 650px) {
+                grid-column: span 1;
+                margin-bottom: 30px;
+            }
+
+
+            .image-wrap {
+                aspect-ratio: 1360/507;
+                overflow: hidden;
+
+                @media screen and (max-width: 1040px) {
+                    aspect-ratio: 11/5;
+                }
+
+                @media screen and (max-width: 991px) {
+                    aspect-ratio: 9/5;
+                }
+
+                @media screen and (max-width: 650px) {
+                    aspect-ratio: 3/4;
+                }
+
+            }
+
+            .tag-n-title {
+                position: absolute;
+                left: 40px;
+                bottom: -12px;
+                z-index: 2;
+                transition: all .3s ease;
+
+                .tag {
+                    margin-bottom: 18px;
+                }
+
+                .title {
+                    margin-bottom: 30px;
+                }
+            }
+
+            .details {
+                opacity: 0;
+
+                span {
+                    color: #adadad;
+                }
+
+                svg {
+                    path:first-of-type {
+                        fill: #343434;
+                    }
+                }
+            }
+        }
+
+        &.small-art {
+            @media screen and (max-width: 650px) {
+                margin-bottom: 30px;
+            }
+
+            .tag {
+                position: absolute;
+                left: 20px;
+                bottom: 20px;
+                z-index: 2;
+                transition: all .3s ease;
+            }
+
+            .image-wrap {
+                margin-bottom: 30px;
+            }
+
+            .title {
+                margin-bottom: 15px;
+            }
+
+            .published {
+                margin-bottom: 32px;
+                color: #FFF;
+                @include fz(14);
+                @include lh(18);
+                font-style: normal;
+                font-weight: 400;
+
+                &::after {
+                    content: '';
+                    background-color: $aktsent;
+                    border-radius: 1px 0;
+                    width: 5px;
+                    height: 5px;
+                    position: relative;
+                    display: inline-block;
+                    left: 9px;
+                    bottom: 2px;
+                }
+            }
+
+            .infolink:hover+div.info-art {
+                .tag {
+                    bottom: 30px;
+                }
+            }
+        }
+    }
+}
+
+.infolink {
+    z-index: 3;
+}
+
+.infolink:hover+div.info-art {
+    .image-wrap {
+
+        &::after {
+            opacity: .7;
+        }
+    }
+
+    .tag-n-title {
+        bottom: 20px;
+    }
+
+
+    .details {
+        opacity: 1;
+
+        span {
+            color: #adadad;
+        }
+
+        svg {
+            path:first-of-type {
+                fill: #343434;
+            }
+        }
+    }
+}

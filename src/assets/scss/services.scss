@@ -1,0 +1,291 @@
+$dark-gray-bg: #121212;
+$gray-bg: #161616;
+$light: #EDEDED;
+$aktsent: #D16527;
+
+@mixin fz($px) {
+    font-size: calc($px / 16)*1rem;
+}
+
+@mixin lh($px) {
+    line-height: calc($px / 16) * 1rem;
+}
+
+@import "breadcrumbs";
+
+/*-====================#Section-Top -====================-*/
+/*-====================Section-services====================-*/
+#service-section {
+
+    .serv-cont {
+        display: grid;
+        grid-template-columns: 66% 32%;
+        gap: 30px;
+
+        @media screen and (max-width: 1280px) {
+            grid-template-columns: 60% 35%;
+        }
+
+        @media screen and (max-width: 1100px) {
+            grid-template-columns: 50% 45%;
+        }
+
+        @media screen and (max-width: 991px) {
+            grid-template-columns: 100%;
+        }
+    }
+
+    .service-item {
+        position: relative;
+        padding: 40px;
+        background: rgba(18, 18, 18, 0.95);
+        margin-bottom: 40px;
+        border-top: 2px solid transparent;
+        transition: all .3s ease;
+        cursor: pointer;
+
+        .overlay {
+            background: url('../images/serv-back.png') 50% 50%/ 80% auto no-repeat;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        .title {
+            color: #FFF;
+            font-family: 'Chakra Petch', sans-serif;
+            @include fz(23);
+            @include lh(32);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 45px;
+
+            &::after {
+                content: '';
+                width: 100%;
+                height: 2px;
+                border: 1px solid #343434;
+                position: relative;
+                bottom: -20px;
+                left: 0;
+                display: block;
+            }
+        }
+
+        ul {
+            columns: 2;
+            margin-bottom: -18px;
+            gap: 46px;
+
+            @media screen and (max-width: 1200px) {
+                columns: 1;
+            }
+
+            li {
+                @include fz(16);
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                text-transform: capitalize;
+                list-style-position: inside;
+                padding-left: 20px;
+                margin-bottom: 24px;
+                position: relative;
+
+                &::marker {
+
+                    list-style-image: none;
+                }
+
+                &::before {
+                    content: url('../icons/list-icon.svg');
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+            }
+        }
+
+        &:hover {
+            border-top: 2px solid $aktsent;
+
+            .overlay {
+                opacity: 1;
+            }
+        }
+    }
+
+    .contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+
+        @media screen and (max-width: 991px) {
+            align-items: center;
+        }
+    }
+
+    .desription-day {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 28px;
+        @include fz(18);
+        @include lh(26);
+        font-weight: 400;
+        margin-bottom: 32px;
+    }
+
+
+}
+
+/*-====================#Section-Top -====================-*/
+/*-====================Section-services & Contacts====================-*/
+#service-section,
+#contact-section {
+    padding: 160px 0;
+
+    @media screen and (max-width: 991px) {
+        padding: 80px 0;
+    }
+
+    .contact-item {
+        width: 94%;
+        padding: 39px 40px 22px 40px;
+        border: 1px solid #343434;
+        margin-bottom: 40px;
+
+
+        .descr-item {
+            margin-bottom: 13px;
+        }
+
+        .title {
+            color: $light;
+            font-family: 'Chakra Petch', sans-serif;
+            @include fz(23);
+            @include lh(32);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 19px;
+        }
+
+
+    }
+
+    .desription>p {
+        margin-bottom: 15px;
+    }
+
+    .desription-day {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0;
+        @include fz(18);
+        @include lh(26);
+        font-weight: 400;
+        margin-bottom: 32px;
+    }
+
+    .days {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+
+        @media screen and (max-width: 991px) {
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .hour {
+            text-align: left;
+            width: 41%;
+
+            @media screen and (max-width: 480px) {
+                width: 100%;
+            }
+        }
+
+        .day {
+            @media screen and (max-width: 480px) {
+                width: 100%;
+                text-align: left;
+            }
+        }
+    }
+
+    a {
+        color: $light;
+        @include fz(18);
+        @include lh(26);
+        font-weight: 400;
+
+        &:hover {
+            color: $aktsent;
+        }
+    }
+}
+
+#contact-section {
+
+    .contacts {
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        gap: 40px;
+
+        @media screen and (max-width: 1420px) {
+            gap: 20px;
+        }
+
+        @media screen and (max-width: 1240px) {
+            flex-wrap: wrap;
+        }
+
+        &.mb-60 {
+            margin-bottom: 60px;
+        }
+    }
+
+    .contact-item {
+        &.order {
+            order: 1;
+        }
+
+        @media screen and (max-width: 1420px) {
+            padding: 20px;
+        }
+
+        @media screen and (max-width: 1240px) {
+            width: 48%;
+            min-height: 230px;
+            margin-bottom: 0;
+        }
+
+        @media screen and (max-width: 991px) {
+            &.order {
+                order: 0;
+            }
+        }
+
+        @media screen and (max-width: 715px) {
+            width: 100%;
+        }
+
+    }
+
+    .days {
+        @media screen and (max-width: 991px) {
+            align-items: flex-start;
+        }
+    }
+}

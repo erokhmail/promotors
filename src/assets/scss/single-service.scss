@@ -1,0 +1,158 @@
+$dark-gray-bg: #121212;
+$gray-bg: #161616;
+$light: #EDEDED;
+$aktsent: #D16527;
+
+@mixin fz($px) {
+    font-size: calc($px / 16)*1rem;
+}
+
+@mixin lh($px) {
+    line-height: calc($px / 16) * 1rem;
+}
+
+@import "breadcrumbs";
+@import "faq-part";
+@import "form";
+@import "news";
+
+
+/*-====================#Section-Top -====================-*/
+/*-====================Section-services====================-*/
+#single-section {
+    padding: 160px 0 80px;
+
+    @media screen and (max-width: 991px) {
+        padding: 80px 0;
+    }
+
+    .banner {
+        aspect-ratio: 136/40;
+        margin-bottom: 30px;
+    }
+
+    .h2-title {
+        margin-bottom: 20px;
+    }
+
+    .faq-title {
+        margin-bottom: 30px;
+    }
+
+    p {
+        font-family: 'Chakra Petch', sans-serif;
+        @include fz(18);
+        @include lh(26);
+        font-style: normal;
+        font-weight: 400;
+        padding-bottom: 20px;
+    }
+
+    .szh-accordion__item-panel {
+        p {
+            font-family: 'Mulish', sans-serif;
+        }
+    }
+
+    .s-content {
+        width: min(90%, 893px);
+        margin-inline: auto;
+    }
+
+    .s-list {
+        li {
+            @include fz(16);
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            text-transform: uppercase;
+            list-style-position: inside;
+            padding-left: 20px;
+            margin-bottom: 19px;
+            position: relative;
+
+            &::marker {
+                list-style-image: none;
+            }
+
+            &::before {
+                content: url('../icons/list-icon.svg');
+                position: absolute;
+                left: 0;
+            }
+
+        }
+    }
+
+    //faq----------------------//
+
+
+    //#faq-------------------------//
+    .form-block {
+        padding: 20px 0 80px;
+        flex-direction: column;
+
+        @media screen and (max-width: 991px) {
+            padding: 20px 0 40px;
+        }
+
+        .h2-title {
+            margin-bottom: -10px;
+        }
+
+        p {
+            max-width: 768px;
+            margin-bottom: -15px;
+            ;
+        }
+
+        form {
+            width: 100%;
+            position: relative;
+        }
+    }
+
+
+}
+
+/*-====================Section-Blog====================-*/
+#blog-section {
+    padding-bottom: 160px;
+
+    @media screen and (max-width: 991px) {
+        padding-bottom: 80px;
+    }
+
+    .popular-news {
+        position: relative;
+
+        .transparant-suptitle {
+            font-style: normal;
+        }
+
+        .h2-title {
+            margin-bottom: 77px;
+        }
+    }
+
+    .news-block {
+        display: grid;
+        grid-template-columns: repeat(3, 31.3%);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 77px 40px;
+
+        @media screen and (max-width: 1040px) {
+            gap: 30px 20px;
+        }
+
+        @media screen and (max-width: 991px) {
+            grid-template-columns: repeat(2, 50%);
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+        @media screen and (max-width: 650px) {
+            grid-template-columns: repeat(1, 100%);
+            grid-template-rows: 1fr;
+        }
+    }
+}

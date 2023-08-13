@@ -1,0 +1,74 @@
+$dark-gray-bg: #121212;
+$gray-bg: #161616;
+$light: #EDEDED;
+$aktsent: #D16527;
+
+@mixin fz($px) {
+    font-size: calc($px / 16)*1rem;
+}
+
+@mixin lh($px) {
+    line-height: calc($px / 16) * 1rem;
+}
+
+.n-found {
+    margin-top: 0;
+}
+
+#not-found {
+    background: url('../images/404_bg.jpg') 0 0/cover no-repeat;
+    width: auto;
+    height: 100vh;
+    overflow: hidden;
+
+    .bg-overlay {
+        background: rgba(0, 0, 0, 0.40);
+        width: 100%;
+        height: 100%;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+
+        .found-content {
+            max-width: 592px;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+    }
+
+    .h1-title {
+        font-family: 'Chakra Petch', sans-serif;
+        @include fz(66);
+        @include lh(73);
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 19px;
+
+        @media screen and (max-width: 1280px) {
+            @include fz(48);
+            @include lh(59);
+        }
+
+        @media screen and (max-width: 480px) {
+            @include fz(36);
+            @include lh(47);
+        }
+    }
+
+    .descrip {
+        margin-bottom: 32px;
+    }
+
+    .btn {
+        padding: 1em 2.7em;
+        width: 56%;
+        display: inline-block;
+
+        @media screen and (max-width: 768px) {
+            padding: 1em 1.7em;
+            width: 80%;
+        }
+    }
+
+}

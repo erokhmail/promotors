@@ -1,0 +1,699 @@
+/*style for main page*/
+@mixin fz($px) {
+  font-size: calc($px / 16)*1rem;
+}
+
+@mixin lh($px) {
+  line-height: calc($px / 16) * 1rem;
+}
+
+// $dark: #343434;
+$light: #EDEDED;
+$gray-bg: #161616;
+$dark-gray-bg: #121212;
+$aktsent: #D16527;
+
+@import "news";
+@import "form";
+
+
+.autoplacement-example {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-gap: 20px;
+  grid-area: 1/2/3/4;
+}
+
+/*-====================Section-First - Slider====================-*/
+
+#first-section {
+  .home-h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: transparent;
+  }
+
+  .slick-list {
+    overflow: hidden;
+  }
+
+  .slick-track {
+    display: flex;
+  }
+
+  .main-slider {
+    position: relative;
+
+    .slick-dots {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      bottom: 8%;
+      right: 14%;
+      transform: translateY(-50%, -50%);
+
+      @media screen and (max-width: 1500px) {
+        bottom: 3%;
+        right: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+
+      button {
+        font-size: 0;
+        width: 30px;
+        height: 2px;
+        border: 0;
+        background: #a5a5a5;
+        cursor: pointer;
+      }
+
+      li {
+        margin: 0 10px;
+
+        &.slick-active {
+          button {
+            background: $aktsent;
+          }
+        }
+      }
+    }
+  }
+
+
+  .slider-item {
+    position: relative;
+
+    .text-block {
+      position: absolute;
+      top: 52%;
+      left: 50%;
+      transform: translate(-50%, -49%);
+
+      @media screen and (max-width: 1500px) {
+        top: 50%;
+        transform: translate(-50%, -25%);
+      }
+
+      @media screen and (max-width: 1280px) {
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  .image-block {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+
+    .photo-slide {
+      flex-basis: 61.2%;
+
+      @media screen and (max-width: 1280px) {
+        flex-basis: 100%;
+      }
+
+      @media screen and (max-width: 768px) {
+        aspect-ratio: 3/4;
+      }
+    }
+
+
+  }
+
+  .transparant-title {
+    color: rgba(47, 47, 47, 0.00);
+    -webkit-text-stroke: 1px rgba(52, 52, 52, .7);
+    font-family: 'Chakra Petch', sans-serif;
+    @include fz(170);
+    font-weight: 700;
+    text-transform: uppercase;
+
+    @media screen and (max-width: 1800px) {
+      @include fz(130);
+    }
+
+    @media screen and (max-width: 1500px) {
+      display: none;
+    }
+
+
+    &.sup {
+      transform: translate(8%, 11%);
+      // transform: translateX(8%);
+      margin-bottom: 10px;
+    }
+
+    &.sub {
+      transform: translate(-35%, 3%);
+      max-width: 50%;
+
+      @media screen and (max-width: 1800px) {
+        transform: translate(-12%, 3%);
+      }
+
+
+    }
+  }
+
+  .main-text {
+    max-width: 690px;
+  }
+
+  .slider-title {
+    font-family: 'Chakra Petch', sans-serif;
+    @include fz(66);
+    @include lh(73);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 1500px) {
+      @include fz(56);
+      @include lh(63);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include fz(46);
+      @include lh(53);
+    }
+
+    @media screen and (max-width: 576px) {
+      @include fz(26);
+      @include lh(33);
+    }
+  }
+
+  .slider-subtitle {
+    @include lh(26);
+    @include fz(18);
+    font-style: normal;
+    font-weight: 400;
+    max-width: 450px;
+    margin-bottom: 50px;
+
+    @media screen and (max-width: 576px) {
+      max-width: 75%;
+    }
+  }
+
+}
+
+/*-====================#Section-First - Slider====================-*/
+/*-====================Section-Second - Benefits====================-*/
+#second-section {
+  background-color: $dark-gray-bg;
+  padding: 62px 0 60px 0;
+
+  .benefits {
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    column-gap: 135px;
+
+    @media screen and (max-width: 1280px) {
+      column-gap: 25px;
+      justify-content: space-between;
+    }
+
+    @media screen and (max-width: 1024px) {
+      flex-wrap: wrap;
+      row-gap: 45px;
+    }
+
+    @media screen and (max-width: 768px) {
+      justify-content: center;
+    }
+
+    .benefit-item {
+      max-width: 331px;
+
+      .img-svg {
+        max-width: 35px;
+        height: auto;
+      }
+    }
+
+    .title {
+      font-family: 'Chakra Petch', sans-serif;
+      @include fz(23);
+      @include lh(32);
+      color: #FFF;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+
+      span {
+        margin-left: 15px;
+      }
+    }
+
+    .description {
+      color: #C2C2C2;
+      @include fz(14);
+      @include lh(18);
+      font-style: normal;
+      font-weight: 400;
+    }
+  }
+
+}
+
+
+/*-====================#Section-Second - Benefits====================-*/
+/*-====================Section-Third - Benefits====================-*/
+#third-section {
+  padding: 160px 0;
+
+  @media screen and (max-width: 768px) {
+    padding: 80px 0;
+  }
+
+  .convenient {
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 1100px) {
+      flex-direction: column;
+      row-gap: 60px;
+      align-items: center;
+    }
+
+    .image-wrap {
+      aspect-ratio: 619/531;
+      flex-basis: 45.5%;
+    }
+
+    .text-wrap {
+      flex-basis: 49%;
+      padding-left: 81px;
+
+      @media screen and (max-width: 1280px) {
+        padding-left: 40px;
+      }
+
+      @media screen and (max-width: 1100px) {
+        padding-left: 0;
+        text-align: center;
+      }
+
+    }
+  }
+
+  .h2-title {
+    margin-bottom: 20px;
+  }
+
+  p {
+    @include fz(18);
+    @include lh(26);
+    font-weight: 400;
+    margin-bottom: 40px;
+    max-width: 95%;
+  }
+
+  .numeric {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+
+    @media screen and (max-width: 575px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .number-item {
+      flex-basis: 49%;
+    }
+
+    .num-title {
+      font-family: 'Chakra Petch', sans-serif;
+      @include fz(66);
+      @include lh(73);
+      font-weight: 700;
+      text-transform: uppercase;
+      position: relative;
+      margin-bottom: 40px;
+
+      @media screen and (max-width: 1280px) {
+        @include fz(46);
+        @include lh(53);
+      }
+
+      @media screen and (max-width: 1280px) {
+        @include fz(36);
+        @include lh(43);
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        height: 1px;
+        width: 160px;
+        background-color: $aktsent;
+        position: absolute;
+        left: 0;
+        bottom: -20px;
+
+        @media screen and (max-width: 1100px) {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+
+    .sub-text {
+      @include fz(16);
+      @include lh(22);
+      font-style: normal;
+      font-weight: 400;
+      max-width: 250px;
+
+      @media screen and (max-width: 1100px) {
+        margin: 0 auto;
+      }
+    }
+  }
+
+
+}
+
+/*-====================#Section-Third - Benefits====================-*/
+/*-====================Section-Fourth - Benefits====================-*/
+#fourth-section {
+  padding: 100px 0 130px 0;
+  background-color: $dark-gray-bg;
+
+  @media screen and (max-width: 768px) {
+    padding: 80px 0;
+  }
+
+  .block-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+    @media screen and (max-width: 450px) {
+      flex-direction: column;
+      row-gap: 30px;
+    }
+  }
+
+  .block-serv {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 51px 39px;
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+
+    @media screen and (max-width: 575px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(6, 1fr);
+    }
+  }
+
+  .serv-item {
+    position: relative;
+  }
+
+
+
+  .info {
+    border-top: 2px solid rgba(52, 52, 52, 1);
+    padding-top: 30px;
+
+    @media screen and (max-width: 450px) {
+      text-align: center;
+    }
+
+    .info-icon {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 9px;
+
+      @media screen and (max-width: 450px) {
+        margin-inline: auto;
+      }
+
+      &.tr-10 {
+        margin-bottom: 10px;
+      }
+
+      // svg {
+
+      // }
+      .img-svg {
+        width: 50px;
+        height: 53px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+
+        img {
+          object-fit: contain;
+        }
+      }
+
+
+    }
+
+    .title {
+      color: #FFF;
+      font-family: 'Chakra Petch', sans-serif;
+      @include fz(23);
+      @include lh(32);
+      font-style: normal;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .descr {
+      @include fz(16);
+      @include lh(22);
+      font-style: normal;
+      font-weight: 400;
+      max-width: 345px;
+      margin-bottom: 30px;
+    }
+
+
+  }
+
+  .infolink:hover+div.info {
+    border-top: 2px solid $aktsent;
+
+    .details {
+      span {
+        color: #adadad;
+      }
+
+      svg {
+        path:first-of-type {
+          fill: #343434;
+        }
+      }
+    }
+  }
+
+  .btn {
+    padding: 1em 2.1em;
+  }
+
+}
+
+/*-====================#Section-Fourth - Benefits====================-*/
+/*-====================Section-Fifth - Benefits====================-*/
+#fifth-section {
+  padding: 130px 0 160px 0;
+  background-color: $gray-bg;
+
+  @media screen and (max-width: 991px) {
+    padding: 60px 0 80px 0;
+  }
+
+  .h2-title {
+    margin-bottom: 71px;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: rgba(52, 52, 52, 1);
+      position: absolute;
+      left: 0;
+      bottom: -30px;
+    }
+  }
+
+
+
+}
+
+/*-====================#Section-Fifth - Benefits====================-*/
+/*-====================Section-Six - Benefits====================-*/
+#six-section {
+  background-color: $dark-gray-bg;
+  z-index: 0;
+  position: relative;
+
+  @media screen and (max-width: 991px) {
+    padding: 60px 0;
+  }
+
+  .photo-info {
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 991px) {
+      flex-direction: column;
+      margin-bottom: 60px;
+    }
+
+    .img-wrap {
+      aspect-ratio: 96/61;
+      flex-basis: 50%;
+
+      @media screen and (max-width: 991px) {
+        flex-basis: unset;
+        width: 90%;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  .text-wrap {
+    width: 48%;
+
+    @media screen and (max-width: 991px) {
+      width: 90%;
+    }
+  }
+
+  .text-block {
+    padding-left: 82px;
+    max-width: 660px;
+    position: relative;
+
+    @media screen and (max-width: 1100px) {
+      padding-left: 40px;
+    }
+
+    @media screen and (max-width: 991px) {
+      padding-left: 0;
+    }
+  }
+
+  .h2-title {
+    margin-bottom: 20px;
+  }
+
+
+  ul {
+    columns: 2;
+    margin-bottom: 40px;
+
+    li {
+      font-family: 'Chakra Petch', sans-serif;
+      @include fz(16);
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      text-transform: uppercase;
+      list-style-image: url('../icons/list-icon.svg');
+      list-style-position: inside;
+      margin-bottom: 16px;
+    }
+  }
+
+  .rtl {
+    flex-direction: row-reverse;
+
+    @media screen and (max-width: 991px) {
+      flex-direction: column;
+
+      .text-wrap {
+        justify-content: flex-start;
+
+        .text-block {
+          padding-left: 0;
+        }
+      }
+    }
+
+    .img-wrap {
+      flex-basis: 50%;
+    }
+
+    .text-wrap {
+      display: flex;
+      justify-content: end;
+
+      @media screen and (max-width: 991px) {
+        justify-content: flex-start;
+      }
+
+      .text-block {
+        margin-right: 102px;
+
+        @media screen and (max-width: 768px) {
+          margin-right: 0;
+        }
+      }
+    }
+
+  }
+
+  p {
+    @include fz(18);
+    @include lh(26);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 40px;
+  }
+
+
+}
+
+/*-====================#Section-Six - Benefits====================-*/
+/*-====================Section-Seven - Pop-art====================-*/
+#seven-section {
+  padding: 130px 0 60px 0;
+
+  @media screen and (max-width: 991px) {
+    padding: 80px 0;
+  }
+
+  .h2-title {
+    margin-bottom: 70px;
+  }
+
+
+}
+
+/*-====================#Section-Seven - Pop-art====================-*/
+/*-====================Section-Eight - Pop-art====================-*/
+#eight-section {
+  margin-bottom: 160px;
+
+  @media screen and (max-width: 480px) {
+    margin-bottom: 80px;
+  }
+
+}
+
+/*-====================#Section-Eight - Pop-art====================-*/

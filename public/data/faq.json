@@ -1,0 +1,22 @@
+[
+    {
+        "question": "How should brakes work?",
+        "answer": "<p>Brakes work by applying friction to slow down or stop a vehicle. When you press the brake pedal, hydraulic pressure is transmitted to brake components, squeezing brake pads against a rotating brake disc or drum. This friction converts kinetic energy into heat, reducing the vehicle's speed.</p>"
+    },
+    {
+        "question": "What are brake pads?",
+        "answer": "<p>Brake pads are friction materials that press against brake discs or drums when you brake. They create friction, converting kinetic energy into heat, slowing down or stopping the vehicle.</p>"
+    },
+    {
+        "question": "How long do brake pads and rotors last?",
+        "answer": "<p>Brake pads generally last around 30,000 to 70,000 miles, while rotors can last 50,000 to 70,000 miles. Actual lifespan varies based on driving habits and conditions.</p>"
+    },
+    {
+        "question": "What is a brake system flush?",
+        "answer": "<p>A brake system flush involves replacing old brake fluid with new fluid to remove contaminants and maintain brake system performance.</p>"
+    },
+    {
+        "question": "I hear a grinding noise when I step on the brakes. Should I be concerned?",
+        "answer": "<p>Yes, a grinding noise when braking could indicate worn brake pads damaging the brake discs. It's a serious issue that requires immediate attention.</p>"
+    }
+]

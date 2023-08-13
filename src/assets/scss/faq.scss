@@ -1,0 +1,117 @@
+$dark-gray-bg: #121212;
+$gray-bg: #161616;
+$light: #EDEDED;
+$aktsent: #D16527;
+
+@mixin fz($px) {
+    font-size: calc($px / 16)*1rem;
+}
+
+@mixin lh($px) {
+    line-height: calc($px / 16) * 1rem;
+}
+
+@import "breadcrumbs";
+@import "faq-part";
+@import "form";
+@import "book-pop";
+
+
+/*-====================#Section-Top -====================-*/
+/*-====================Section-Team====================-*/
+#faq-page {
+    padding: 160px 0;
+
+    @media screen and (max-width: 480px) {
+        padding: 60px 0;
+    }
+
+    .h2-title {
+        margin-bottom: 20px;
+    }
+
+    .faq-block {
+        padding: 0;
+
+        @media screen and (max-width: 991px) {
+            margin-bottom: 60px;
+        }
+    }
+
+    .faq-title {
+        margin-bottom: 30px;
+    }
+
+    .szh-accordion__item-panel {
+        p {
+            font-family: 'Mulish', sans-serif;
+        }
+    }
+
+
+    .faqq {
+        display: grid;
+        grid-template-columns: 66% 32%;
+        gap: 30px;
+
+        @media screen and (max-width: 1280px) {
+            grid-template-columns: 60% 35%;
+        }
+
+        @media screen and (max-width: 1100px) {
+            grid-template-columns: 50% 45%;
+        }
+
+        @media screen and (max-width: 991px) {
+            grid-template-columns: 100%;
+        }
+    }
+
+    .right-col {
+        padding: 40px 52px;
+        border: 1px solid #343434;
+        margin-bottom: 40px;
+        min-height: 462px;
+        background: url('../images/faq-bg.png') 0/100% auto no-repeat;
+        background-position: 50% 100%;
+
+        .title {
+            font-family: 'Chakra Petch', sans-serif;
+            @include fz(29);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 40px;
+            @include fz(18);
+            @include lh(26);
+            font-weight: 400;
+        }
+
+        .btn {
+            width: 100%;
+
+            @media screen and (max-width: 991px) {
+                width: 310px;
+            }
+
+            @media screen and (max-width: 480px) {
+                width: 100%;
+            }
+        }
+    }
+
+
+}
+
+/*-====================Section-Book====================-*/
+#book {
+    &.faq-p {
+        background: url('../images/faq-bottom.jpg') 0 0/cover no-repeat;
+    }
+
+}
+
+/*-====================#Section-Book====================-*/

@@ -1,0 +1,405 @@
+/* style for about page */
+@import "breadcrumbs";
+@import "members";
+@import "form";
+@import "book-pop";
+
+
+
+$dark-gray-bg: #121212;
+$gray-bg: #161616;
+$light: #EDEDED;
+$aktsent: #D16527;
+
+@mixin fz($px) {
+    font-size: calc($px / 16)*1rem;
+}
+
+@mixin lh($px) {
+    line-height: calc($px / 16) * 1rem;
+}
+
+/*-====================Section-progress====================-*/
+
+#progress-section {
+    padding: 160px 0 84px 0;
+
+    @media screen and (max-width: 768px) {
+        padding: 130px 0 84px 0;
+    }
+
+    @media screen and (max-width: 480px) {
+        padding: 80px 0 40px 0;
+    }
+
+    .progress {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+
+        @media screen and (max-width: 991px) {
+            flex-direction: column-reverse;
+        }
+
+        .img-wrapper {
+            width: 48%;
+
+            @media screen and (max-width: 991px) {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .img {
+                aspect-ratio: 656/530;
+            }
+        }
+
+        .progress-bar {
+            width: 40%;
+
+            @media screen and (max-width: 991px) {
+                width: 100%;
+            }
+        }
+    }
+
+    .h2-title {
+        margin-bottom: 20px;
+    }
+
+    .item {
+        position: relative;
+    }
+
+    .item-title {
+        margin-bottom: 20px;
+    }
+
+    .text {
+        color: $light;
+        @include fz(18);
+        @include lh(26);
+        font-weight: 400;
+        margin-bottom: 20px;
+        padding-right: 20px;
+    }
+
+    .title,
+    .prots {
+        color: $light;
+        font-family: 'Chakra Petch', sans-serif;
+        @include fz(18);
+        font-style: normal;
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+
+    .animated-progress {
+        width: 100%;
+        height: 15px;
+        margin: 20px 0;
+        border: 1px solid #343434;
+        position: relative;
+    }
+
+    .animated-progress {
+        .progress-line {
+            height: 100%;
+            display: block;
+            width: 0;
+            border: 1px solid $aktsent;
+            line-height: 15px;
+            position: absolute;
+            padding-right: 5px;
+        }
+    }
+
+    .prots {
+        position: absolute;
+        right: 0;
+        bottom: 34px;
+    }
+
+    .progress-blue {
+        .progress-line {
+            background-color: $aktsent;
+        }
+    }
+
+}
+
+/*-====================#Section-progress====================-*/
+/*-====================Section-service====================-*/
+#about-service {
+    padding: 80px 0;
+
+    @media screen and (max-width: 480px) {
+        padding: 80px 0 40px 0;
+    }
+
+    .h2-title {
+        margin-bottom: 40px;
+    }
+
+    .about-service {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(426px, 1fr));
+        column-gap: 40px;
+        row-gap: 36px;
+
+        @media screen and (max-width: 991px) {
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        }
+    }
+
+    .about-item {
+        position: relative;
+    }
+
+    .item-block {
+        padding: 30px 30px 25px 30px;
+        min-height: 115px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: $dark-gray-bg;
+        border-top: 3px solid transparent;
+        transition: all .3s ease;
+    }
+
+    .icon {
+        width: 50px;
+        height: 53px;
+        position: relative;
+        margin-right: 20px;
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: contain;
+        }
+    }
+
+    span {
+        color: $light;
+        font-family: 'Chakra Petch', sans-serif;
+        @include fz(23);
+        @include lh(32);
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+    }
+
+    .link-wrap {
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        position: absolute;
+
+        &:hover+div.item-block {
+            border-top: 3px solid $aktsent;
+        }
+    }
+}
+
+/*-====================#Section-service====================-*/
+/*-====================Section-work====================-*/
+#about-work {
+    padding: 80px 0;
+
+    @media screen and (max-width: 480px) {
+        padding: 80px 0 40px 0;
+    }
+
+    .h2-title {
+        margin-bottom: 70px;
+    }
+
+    .about-work {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+        gap: 40px;
+    }
+
+    .work-item {
+        position: relative;
+    }
+
+    .item-work {
+        border-top: 3px solid transparent;
+        transition: all .3s ease;
+        position: relative;
+
+        .text-top {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            font-family: 'Chakra Petch', sans-serif;
+            @include fz(18);
+            color: #FFF;
+            font-weight: 700;
+            text-transform: uppercase;
+            opacity: 0;
+            transition: all .3s ease;
+        }
+    }
+
+    .img-w-wrap {
+        aspect-ratio: 310/445;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.70);
+            transition: all .3s ease;
+            opacity: 0;
+        }
+    }
+
+
+    .link-wrap {
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        position: absolute;
+
+
+        &:hover+div.item-work {
+            border-top: 3px solid $aktsent;
+
+            .img-w-wrap {
+                &::after {
+                    opacity: 1;
+
+                }
+            }
+
+            .text-top {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+/*-====================#Section-work====================-*/
+/*-====================Section-how-to====================-*/
+#how-to {
+    padding: 80px 0;
+
+    @media screen and (max-width: 480px) {
+        padding: 80px 0 40px 0;
+    }
+
+    .how {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        @media screen and (max-width: 1506px) {
+            flex-direction: column;
+        }
+
+        .block-info {
+            max-width: 350px;
+
+            @media screen and (max-width: 1506px) {
+                margin-bottom: 50px;
+                max-width: unset;
+            }
+
+            .h2-title {
+                margin-bottom: 20px;
+            }
+
+            .how-descr {
+                @include fz(18);
+                @include lh(26);
+            }
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(427px, 1fr));
+            column-gap: 40px;
+            row-gap: 50px;
+            width: 66%;
+
+            @media screen and (max-width: 1506px) {
+                width: 100%;
+            }
+
+            .step {
+                border-top: 2px solid #343434;
+                padding-top: 27px;
+
+                .step-title {
+                    font-family: 'Chakra Petch', sans-serif;
+                    @include fz(23);
+                    @include lh(32);
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    margin-bottom: 19px;
+
+                    span {
+                        color: $aktsent;
+                        margin-right: 15px;
+                    }
+                }
+
+                .step-descr {
+                    max-width: 80%;
+                    @include fz(16);
+                    @include lh(22);
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+}
+
+/*-====================#Section-how-to====================-*/
+/*-====================Section-Team====================-*/
+#team {
+    padding: 80px 0 170px 0;
+
+    @media screen and (max-width: 480px) {
+        padding: 80px 0;
+    }
+
+    .h2-title {
+        margin-bottom: 66px;
+
+        &::after {
+            content: '';
+            width: 100%;
+            height: 2px;
+            border: 2px solid #343434;
+            position: relative;
+            bottom: -30px;
+            left: 0;
+            display: block;
+        }
+    }
+
+
+}
+
+
+
+/*-====================#Section-Team====================-*/
+/*-====================Section-Book====================-*/
+#book {
+    background: url('../images/book-back.jpg') 0 0/cover no-repeat;
+
+}
+
+/*-====================#Section-Book====================-*/

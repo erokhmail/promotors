@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Engine Repair",
+        "img": "/works/work1.jpg",
+        "link": "/services/single-service"
+    },
+    {
+        "title": "Cleaning",
+        "img": "/works/work2.jpg",
+        "link": "/services/single-service"
+    },
+    {
+        "title": "Diagnostics",
+        "img": "/works/work3.jpg",
+        "link": "/services/single-service"
+    },
+    {
+        "title": "Brake Repair",
+        "img": "/works/work4.jpg",
+        "link": "/services/single-service"
+    }
+]

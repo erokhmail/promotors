@@ -1,0 +1,17 @@
+[
+    {
+        "icon": "icons/a-brake.svg",
+        "title": "Brake Repair",
+        "description": "Premium auto care that won't break the bank. Experience quality at a fraction of the cost."
+    },
+    {
+        "icon": "icons/benefit-safety.svg",
+        "title": "Safety materials",
+        "description": "We use only the best materials to keep your vehicle and you protected."
+    },
+    {
+        "icon": "icons/benefit-book.svg",
+        "title": "Book Appointment",
+        "description": "Convenience at your fingertips. Easily book appointments for your auto care needs."
+    }
+]
