@@ -6,7 +6,7 @@ import HomeServices from '../components/HomeServices'
 import Convenient from '../components/Convenient'
 import Video from '../components/Video'
 import HalfBlock from '../components/HalfBlock'
-import NewsLine from '../components/NewsLine'
+import HomeNewsLine from '../components/HomeNewsLine'
 import FormMap from '../components/FormMap'
 
 import './../assets/scss/main.scss'
@@ -38,7 +38,7 @@ function Home() {
                 </div>
             </section>
             <HalfBlock />
-            <NewsLine />
+            <HomeNewsLine />
             <section id="eight-section">
                 <div className="container">
                     <FormMap />

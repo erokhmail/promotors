@@ -1,18 +1,31 @@
-import PropTypes from "prop-types";
+function Progress(props) {
+    const { completed, title } = props;
 
-function Progress({ value, max }) {
+    const containerStyles = {
+        height: 16,
+        width: '100%',
+        border: '1px solid #343434',
+    }
+
+    const fillerStyles = {
+        height: '100%',
+        width: `${completed}%`,
+        backgroundColor: "#D16527",
+        textAlign: 'right'
+    }
+
     return (
-        <progress value={value} max={max} />
-    )
-}
+        <>
+            <div className="item-title">
+                <div className="title">{`${title}`}</div>
+                <span className="prots">{`${completed}%`}</span>
+            </div>
+            <div style={containerStyles}>
+                <div style={fillerStyles}> </div>
+            </div>
+        </>
+    );
 
-Progress.propTypes = {
-    value: PropTypes.number.isRequired,
-    max: PropTypes.number,
-}
-
-Progress.defaultProps = {
-    max: 100,
-}
+};
 
 export default Progress;

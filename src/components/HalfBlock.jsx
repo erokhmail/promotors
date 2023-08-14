@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function HalfBlock() {
     const [halfBlock, setHalfBlock] = useState([]);
@@ -26,7 +27,7 @@ function HalfBlock() {
                                 <div className="h2-title">{item.title}</div>
                                 <div dangerouslySetInnerHTML={{ __html: item.content }} />
                                 <div className="">
-                                    <a href={item.link} className="btn btn-serv">{item.linkText}</a>
+                                    <Link to="services" className="btn btn-serv">{item.linkText}</Link>
                                 </div>
                             </div>
                         </div>

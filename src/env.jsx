@@ -1,5 +1,5 @@
 
-export const NEWS_CASH_TIME = 2 * 60 * 60 * 1000; //2 hours to refresh local storage
+export const NEWS_CASH_TIME = 1 * 60 * 60 * 1000; //1 hour to refresh local storage
 
 
 export const WN_API_KEY = '9fd494d8e6204bb38c8c938d81fb8e9a';

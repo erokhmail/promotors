@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react';
+import ProgressSection from '../components/ProgressSection';
 import AboutServ from '../components/AboutServ';
 import OurWorks from '../components/OurWorks';
 import HowSteps from '../components/HowSteps';
@@ -8,7 +9,6 @@ import Book from '../components/Book';
 
 
 import './../assets/scss/about.scss'
-import ProgressSection from '../components/ProgressSection';
 
 function About() {
     const [about, setAbout] = useState({});

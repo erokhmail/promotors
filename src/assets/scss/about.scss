@@ -68,12 +68,15 @@ $aktsent: #D16527;
         margin-bottom: 20px;
     }
 
-    .item {
-        position: relative;
+    .item:not(:last-child) {
+        margin-bottom: 30px;
     }
 
     .item-title {
         margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .text {
@@ -95,28 +98,7 @@ $aktsent: #D16527;
         text-transform: capitalize;
     }
 
-    .animated-progress {
-        width: 100%;
-        height: 15px;
-        margin: 20px 0;
-        border: 1px solid #343434;
-        position: relative;
-    }
-
-    .animated-progress {
-        .progress-line {
-            height: 100%;
-            display: block;
-            width: 0;
-            border: 1px solid $aktsent;
-            line-height: 15px;
-            position: absolute;
-            padding-right: 5px;
-        }
-    }
-
     .prots {
-        position: absolute;
         right: 0;
         bottom: 34px;
     }

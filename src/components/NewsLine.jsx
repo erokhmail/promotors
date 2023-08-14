@@ -3,10 +3,16 @@ import { useState, useEffect, useRef } from "react";
 import ky from "ky";
 import { toast } from "react-toastify";
 import NewsItem from "./NewsItem";
+import ReactPaginate from 'react-paginate';
+
+
+const isDev = true;
 
 function NewsLine() {
     const [newsLine, setNewsLine] = useState([]);
     const fetchCount = useRef(0);
+    const itemsPerPage = 4;
+    const [itemOffset, setItemOffset] = useState(0);
 
 
     async function fetchNews() {
@@ -26,16 +32,16 @@ function NewsLine() {
         }
 
         try {
-            const resp = await ky(`${WN_API}search-news?api-key=${WN_API_KEY}&text=design&language=en&number=10`).json();
+            const url = isDev ? 'mock/news.json' : `${WN_API}search-news?api-key=${WN_API_KEY}&text=automobile%20maintenance&language=en&sort=publish-time&sort-direction=DESC&number=10`
+            const resp = await ky(url).json();
             console.log(resp);
             setNewsLine(resp.news);
             localStorage.setItem('newsLine', JSON.stringify(resp.news));
             localStorage.setItem('lastNewsUpdate', new Date().getTime());
         } catch (err) {
             console.log(err)
-            toast.error('some text');
+            toast.error('something went wrong');
         }
-
 
     }
 
@@ -43,19 +49,33 @@ function NewsLine() {
         fetchNews();
     }, []);
 
+    const endOffset = itemOffset + itemsPerPage;
+    const currentItems = newsLine.slice(itemOffset, endOffset);
+    const pageCount = Math.ceil(newsLine.length / itemsPerPage);
 
+    const handlePageClick = (event) => {
+        const newOffset = (event.selected * itemsPerPage) % newsLine.length;
+        setItemOffset(newOffset);
+    };
 
     return (
         <>
-            <section id="seven-section">
-                <div className="popular-news container">
-                    <h2 className="h2-title">Popular articles</h2>
 
-                    <div className="news-block">
-                        {newsLine.map(item => <NewsItem item={item} key={item.id} />)}
-                    </div>
-                </div>
-            </section>
+            <div className="news-block">
+                {currentItems.map(item => <NewsItem item={item} key={item.id} />)}
+            </div>
+            <ReactPaginate
+                breakLabel="..."
+                nextLabel="next >"
+                onPageChange={handlePageClick}
+                pageCount={pageCount}
+                previousLabel="< previous"
+                renderOnZeroPageCount={null}
+                containerClassName="paggination"
+                pageClassName="pag-item"
+            />
+
+
         </>
     )
 }

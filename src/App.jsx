@@ -13,6 +13,10 @@ import Contacts from './pages/Contacts'
 import NotFound from './pages/NotFound'
 import SingleService from './pages/SingleService'
 import FaqPage from './pages/FaqPage'
+import SingleNew from './pages/SingleNew'
+import NewsPage from './pages/NewsPage'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -26,10 +30,13 @@ function App() {
           <Route path="services/single-service" element={<SingleService />} />
           <Route path="faq" element={<FaqPage />} />
           <Route path="team" element={<Team />} />
+          <Route path="news" element={<NewsPage />} />
+          <Route path="news/:hash" element={<SingleNew />} />
           <Route path="contacts" element={<Contacts />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <ToastContainer />
     </>
   )
 }

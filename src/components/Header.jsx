@@ -22,6 +22,10 @@ function Header() {
             slug: 'team'
         },
         {
+            title: 'News',
+            slug: 'news'
+        },
+        {
             title: 'Contacts',
             slug: 'contacts'
         }
