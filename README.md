@@ -1,8 +1,12 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Promotors - Course project, Front-end development
+Author: Olena Rokhmail-Kyrylenkova
 
-Currently, two official plugins are available:
+Multi-page informational website for the automobile service "Promotors - Auto Maintenance & Repair Service"
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Link to Figma template: 
+https://www.figma.com/file/Rs4W9NRlui0bVVinoJfRFT/Promotors-Course?type=design&node-id=0%3A1&mode=design&t=ixwn0S1mqutcT6Em-1
+
+- Link to live on GitHub 
+https://erokhmail.github.io/promotors/

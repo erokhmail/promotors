@@ -6,7 +6,7 @@ function BenefitsList() {
     const [benefits, setBenefits] = useState([]);
 
     useEffect(() => {
-        fetch('/data/benefits.json')
+        fetch('data/benefits.json')
             .then(resp => resp.json())
             .then(resp => {
                 setBenefits(resp);

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import FormatDate from "../helpers/FormatDate";
 import { ReactComponent as ReadMore } from "../assets/images/icons/read-more.svg"
+import DefaultImage from "./../assets/images/art-3.jpg"
 
 
 function NewsItem({ item }) {
@@ -13,7 +14,7 @@ function NewsItem({ item }) {
                 <Link to={`/news/${hash}`} className="infolink art-link" title={item.title}></Link>
                 <div className="info-art">
                     <div className="image-wrap">
-                        <img src={item.image} alt={item.title} />
+                        <img src={item.image ? item.image : DefaultImage} alt={item.title} />
                         <div className="tag">{item.author}</div>
                     </div>
 

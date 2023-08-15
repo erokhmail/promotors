@@ -83,7 +83,8 @@
 
 .form-sq,
 .popup,
-.form-block {
+.form-block,
+.footer-block {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -140,6 +141,35 @@
             }
         }
 
+        input[type=text],
+        input[type=email],
+        input[type=tel],
+        input[type=number],
+        textarea {
+            color: #C2C2C2;
+            font-family: 'Mulish', sans-serif;
+            @include fz(14);
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-transform: capitalize;
+            width: 100%;
+            background-color: transparent;
+            border: 0;
+            border-bottom: 1px solid #343434;
+            padding: 14px 1px 12px 1px;
+
+
+            &:focus {
+                outline: 0 none;
+                border-bottom: 1px solid #464646;
+            }
+
+            &::placeholder {
+                color: #454545;
+            }
+        }
+
         label {
             @include fz(15);
             font-style: normal;
@@ -149,17 +179,58 @@
             margin-bottom: 15px;
         }
 
-        &.message-info {
-            textarea {
-                // padding: 26px 0 11px 0;
-                padding: 19px 0 0 0;
 
-                &::placeholder {
-                    position: relative;
-                    top: 7px;
-                }
+        textarea {
+            padding: 19px 0 0 0;
+
+            &::placeholder {
+                position: relative;
+                top: 0px;
             }
         }
+
+        &.has-error {
+            position: relative;
+
+            input[type=text],
+            input[type=email],
+            input[type=tel],
+            input[type=number],
+            textarea {
+                border-bottom: 1px solid $aktsent;
+            }
+
+            .input-error {
+                color: $aktsent;
+                @include fz(15);
+                position: absolute;
+                bottom: -24px;
+            }
+
+        }
+
+        .has-error {
+            position: relative;
+
+            input[type=text],
+            input[type=email],
+            input[type=tel],
+            input[type=number],
+            textarea {
+                border-bottom: 1px solid $aktsent;
+            }
+
+            .input-error {
+                color: $aktsent;
+                @include fz(15);
+                position: absolute;
+                bottom: -24px;
+            }
+
+        }
+
+
+
 
     }
 
@@ -181,51 +252,6 @@
         width: 100%;
     }
 
-    input[type=text],
-    input[type=email],
-    input[type=number],
-    textarea {
-        color: #C2C2C2;
-        font-family: 'Mulish', sans-serif;
-        @include fz(14);
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        text-transform: capitalize;
-        width: 100%;
-        background-color: transparent;
-        border: 0;
-        border-bottom: 1px solid #343434;
-        padding: 14px 1px 12px 1px;
-
-        // &:nth-child(even) {
-        //   padding-left: 5px;
-        // }
-
-        &:focus {
-            outline: 0 none;
-            border-bottom: 1px solid #464646;
-        }
-
-        &::placeholder {
-            color: #C2C2C2;
-        }
-
-
-    }
-
-
-    .has-err {
-
-        input[type=text],
-        input[type=email] {
-            border-color: red;
-
-            &::placeholder {
-                color: red;
-            }
-        }
-    }
 
     textarea {
         resize: none;

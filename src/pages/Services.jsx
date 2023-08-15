@@ -10,7 +10,7 @@ function ServicePage() {
     const [servicesData, setServicesData] = useState({});
 
     useEffect(() => {
-        fetch('/data/servicesData.json')
+        fetch('data/servicesData.json')
             .then(resp => resp.json())
             .then(resp => {
                 setServicesData(resp);

@@ -36,7 +36,6 @@
     z-index: 1020;
     width: 100vw;
     height: 100vh;
-    display: none;
 
 
     &.show {
@@ -61,6 +60,16 @@
             }
         }
 
+        .popup-inner {
+            width: 100%;
+
+            form {
+                width: 100%;
+                position: relative;
+            }
+
+        }
+
 
         form {
             width: 100%;
@@ -68,20 +77,28 @@
         }
 
         #close-popup {
-            width: 30px;
-            height: 30px;
             position: absolute;
-            top: -30px;
-            right: -30px;
+            top: 20px;
+            right: 20px;
             background-color: transparent;
             border: 0;
             cursor: pointer;
-            border: 1px solid transparent;
-            transition: all .3s ease;
+
+            svg {
+                width: 30px;
+                height: auto;
+                border: 1px solid transparent;
+                transition: all .3s ease;
+            }
 
             &:hover {
-                border: 1px solid $aktsent;
+                svg {
+                    border: 1px solid $aktsent;
+                }
+
             }
+
+
         }
     }
 }

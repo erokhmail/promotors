@@ -5,7 +5,7 @@ function HalfBlock() {
     const [halfBlock, setHalfBlock] = useState([]);
 
     useEffect(() => {
-        fetch('/data/halfblock.json')
+        fetch('data/halfblock.json')
             .then(resp => resp.json())
             .then(resp => {
                 setHalfBlock(resp);

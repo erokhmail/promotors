@@ -7,7 +7,7 @@ function BorderedContacts() {
     const [bContacts, setbContacts] = useState({});
 
     useEffect(() => {
-        fetch('/data/bContacts.json')
+        fetch('data/bContacts.json')
             .then(resp => resp.json())
             .then(resp => {
                 setbContacts(resp);

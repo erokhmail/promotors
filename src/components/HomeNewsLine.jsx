@@ -4,7 +4,8 @@ import ky from "ky";
 import { toast } from "react-toastify";
 import NewsItem from "./NewsItem";
 
-const isDev = true;
+
+const isDev = false;
 
 function HomeNewsLine() {
     const [newsLine, setHomeNewsLine] = useState([]);
@@ -17,26 +18,26 @@ function HomeNewsLine() {
         }
         fetchCount.current++;
 
-        const storageNews = localStorage.getItem('newsLine');
-        const lastUpdate = + localStorage.getItem('lastNewsUpdate');
-        if (storageNews !== null) {
-            const now = new Date().getTime();
-            if ((now - lastUpdate) < NEWS_CASH_TIME) {
-                setHomeNewsLine(JSON.parse(storageNews));
-                return false;
-            }
-        }
+        // const storageNews = localStorage.getItem('newsLine');
+        // const lastUpdate = + localStorage.getItem('lastNewsUpdate');
+        // if (storageNews !== null) {
+        //     const now = new Date().getTime();
+        //     if ((now - lastUpdate) < NEWS_CASH_TIME) {
+        //         setHomeNewsLine(JSON.parse(storageNews));
+        //         return false;
+        //     }
+        // }
 
         try {
             const url = isDev ? 'mock/homenews.json' : `${WN_API}search-news?api-key=${WN_API_KEY}&text=automobile%20maintenance&language=en&sort=publish-time&sort-direction=DESC&number=3`
             const resp = await ky(url).json();
             console.log(resp);
             setHomeNewsLine(resp.news);
-            localStorage.setItem('newsLine', JSON.stringify(resp.news));
-            localStorage.setItem('lastNewsUpdate', new Date().getTime());
+            // localStorage.setItem('newsLine', JSON.stringify(resp.news));
+            // localStorage.setItem('lastNewsUpdate', new Date().getTime());
         } catch (err) {
             console.log(err)
-            toast.error('something went wrong');
+            toast.error('something went wrong', { theme: dark });
         }
 
 

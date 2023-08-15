@@ -20,7 +20,7 @@ function SingleNew() {
     const [singleNew, setSingleNew] = useState({});
 
     useEffect(() => {
-        fetch('/data/singleNew.json')
+        fetch('data/singleNew.json')
             .then(resp => resp.json())
             .then(resp => {
                 setSingleNew(resp);

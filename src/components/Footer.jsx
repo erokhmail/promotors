@@ -1,9 +1,21 @@
 import { Link } from "react-router-dom"
+import { useEffect, useState } from "react"
 import { PHONE_NUMBER_1 } from "../env"
 import footerLogo from "./../assets/images/promotors-logo-footer.png"
 import phoneNumberFormat from "../helpers/phoneNumberFormat"
+import FormFooter from "./FormFooter"
 
 function Footer() {
+    const [footerBlock, setFooterBlock] = useState({});
+
+    useEffect(() => {
+        fetch('data/footer.json')
+            .then(resp => resp.json())
+            .then(resp => {
+                setFooterBlock(resp);
+            })
+    }, [])
+
     return (
         <footer id="footer">
             <div className="container">
@@ -11,61 +23,52 @@ function Footer() {
                     <div className="col-1">
                         <div className="logo">
                             <Link to="/">
-                                <img src={footerLogo} alt="Promotors logo" />
+                                <img src={footerLogo} alt={footerBlock.logo_alt} />
                             </Link>
                         </div>
-                        <div className="text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat</div>
+                        <div className="text">{footerBlock.col_1_descr}</div>
                         <div className="sup-24">
-                            <div className="title-sup">Support center 24/7</div>
+                            <div className="title-sup">{footerBlock.col_1_sup}</div>
                             <div className="phone"><a href={`tel:${phoneNumberFormat(PHONE_NUMBER_1)}`}>{PHONE_NUMBER_1}</a></div>
                         </div>
                     </div>
                     <div className="col col-2">
-                        <div className="title">ABOUT US</div>
+                        <div className="title">{footerBlock.col_2_title}</div>
                         <nav className="about">
                             <ul itemScope="https://schema.org/SiteNavigationElement">
-                                <li><a itemProp="url" href="about.html" title="About Us" className="footer-link active">About Us</a></li>
-                                <li><a itemProp="url" href="team.html" title="Our Team" className="footer-link">Our Team</a></li>
-                                <li><a itemProp="url" href="services.html" title="Services" className="footer-link">Services</a></li>
-                                <li><a itemProp="url" href="faq.html" title="FAQ" className="footer-link">FAQ</a></li>
+                                {footerBlock.about && footerBlock.about.map((item, index) => {
+                                    return (
+                                        <li key={index}>
+                                            <Link itemProp="url" to={item.link} title={item.title} className="footer-link">{item.title}</Link>
+                                        </li>
+                                    )
+                                })}
                             </ul>
                         </nav>
                     </div>
                     <div className="col col-3">
-                        <div className="title">Popular Services</div>
+                        <div className="title">{footerBlock.col_3_title}</div>
                         <nav className="pop-serv">
                             <ul>
-                                <li><a itemProp="url" href="#" title="Tire Repair" className="footer-link">Tire Repair</a></li>
-                                <li><a itemProp="url" href="#" title="Brake Repair" className="footer-link">Brake Repair</a></li>
-                                <li><a itemProp="url" href="#" title="Engine Repair" className="footer-link">Engine Repair</a></li>
-                                <li><a itemProp="url" href="#" title="Charging Repair" className="footer-link">Charging Repair</a></li>
-                                <li><a itemProp="url" href="#" title="Cooling System " className="footer-link">Cooling System </a></li>
-                                <li><a itemProp="url" href="#" title="Wheel Alignment" className="footer-link">Wheel Alignment</a></li>
-                                <li><a itemProp="url" href="#" title="Battery Starting " className="footer-link">Battery Starting </a></li>
-                                <li><a itemProp="url" href="#" title="Suspension Repair" className="footer-link">Suspension Repair</a></li>
-
+                                {footerBlock.pop_serv && footerBlock.pop_serv.map((item, index) => {
+                                    return (
+                                        <li key={index}>
+                                            <Link itemProp="url" to={item.link} title={item.title} className="footer-link">{item.title}</Link>
+                                        </li>
+                                    )
+                                })}
                             </ul>
                         </nav>
                     </div>
                     <div className="col col-4">
-                        <div className="title">SUBSCRIBE</div>
-                        <form action="" className="f-form">
-                            <div className="form-element" id="youremail-wrap">
-                                <label htmlFor="yourname">Your email</label>
-                                <input type="email" id="youremail" name="email" placeholder="Enter your email address" />
-
-                            </div>
-                            <div className="btn-link">
-                                <button type="submit" className="btn">SUBSCRIBE</button>
-                            </div>
-                        </form>
-
+                        <div className="title">{footerBlock.col_4_title}</div>
+                        <FormFooter />
                     </div>
 
                 </div>
             </div>
             <div className="copyright">
-                <p>Promotors &copy; All rights reserved Copyrights 2023</p>
+                <p>{footerBlock.copyright}</p>
             </div>
         </footer>
     )

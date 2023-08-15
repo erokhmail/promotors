@@ -7,7 +7,7 @@ function NotFound() {
     const [notFound, setNotFound] = useState({});
 
     useEffect(() => {
-        fetch('/data/notFound.json')
+        fetch('data/notFound.json')
             .then(resp => resp.json())
             .then(resp => {
                 setNotFound(resp);

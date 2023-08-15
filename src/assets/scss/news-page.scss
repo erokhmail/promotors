@@ -73,6 +73,35 @@ $aktsent: #D16527;
             grid-template-rows: 1fr;
         }
     }
+
+    &.full-page {
+        .serv-cont {
+            display: block;
+
+            .news-block {
+                display: grid;
+                grid-template-columns: repeat(3, 32%);
+                grid-template-rows: repeat(2, 1fr);
+                gap: 77px 40px;
+                padding-top: 37px;
+
+                @media screen and (max-width: 1040px) {
+                    gap: 30px 20px;
+                }
+
+                @media screen and (max-width: 991px) {
+                    grid-template-columns: repeat(2, 50%);
+                    grid-template-rows: repeat(2, 1fr);
+                }
+
+                @media screen and (max-width: 650px) {
+                    grid-template-columns: repeat(1, 100%);
+                    grid-template-rows: 1fr;
+                }
+            }
+        }
+
+    }
 }
 
 /*-====================Section-News====================-*/
@@ -192,14 +221,18 @@ $aktsent: #D16527;
                 position: absolute;
                 top: 0;
                 left: 0;
+                z-index: 1;
             }
 
-            .art-link:hover+div.info-post {
-                .title {
-                    color: $aktsent;
+            .art-link:hover+.info-post {
+                .info-det {
+                    .title {
+                        color: $aktsent;
+                    }
                 }
 
                 .image-wrap {
+
                     img {
                         scale: 1.05;
                     }
@@ -212,49 +245,7 @@ $aktsent: #D16527;
     }
 }
 
-.popular-tag {
-    // div+div {
-    //     margin-right: 20px;
-    // }
 
-    .tag-item {
-        margin-right: 20px;
-    }
-
-    .tag-item {
-        position: relative;
-        display: inline-block;
-        padding: 10px 15px;
-        margin-bottom: 20px;
-
-        &::before {
-            content: '';
-            width: 100%;
-            height: 100%;
-            background-color: #121212;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            position: absolute;
-            z-index: -1;
-        }
-
-        a {
-            color: $light;
-            font-family: 'Chakra Petch', sans-serif;
-            @include fz(15);
-            font-weight: 600;
-            text-transform: uppercase;
-            transition: all .3s ease;
-
-            &:hover {
-                color: $aktsent;
-            }
-        }
-    }
-
-
-}
 
 .paggination {
     padding-top: 60px;

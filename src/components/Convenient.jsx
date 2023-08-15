@@ -6,7 +6,7 @@ function Convenient() {
     const [convenient, setConvenient] = useState([]);
 
     useEffect(() => {
-        fetch('/data/convenient.json')
+        fetch('data/convenient.json')
             .then(resp => resp.json())
             .then(resp => {
                 setConvenient(resp);

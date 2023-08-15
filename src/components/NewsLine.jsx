@@ -5,13 +5,12 @@ import { toast } from "react-toastify";
 import NewsItem from "./NewsItem";
 import ReactPaginate from 'react-paginate';
 
-
-const isDev = true;
+const isDev = false;
 
 function NewsLine() {
     const [newsLine, setNewsLine] = useState([]);
     const fetchCount = useRef(0);
-    const itemsPerPage = 4;
+    const itemsPerPage = 6;
     const [itemOffset, setItemOffset] = useState(0);
 
 

@@ -7,13 +7,13 @@ import Book from '../components/Book';
 
 
 function FaqPage() {
-    const faqJsonPath = '/data/faqPageList.json';
+    const faqJsonPath = 'data/faqPageList.json';
     const bookClass = 'faq-p';
 
     const [faqPage, setfaqPage] = useState({});
 
     useEffect(() => {
-        fetch('/data/faqPage.json')
+        fetch('data/faqPage.json')
             .then(resp => resp.json())
             .then(resp => {
                 setfaqPage(resp);
@@ -45,7 +45,7 @@ function FaqPage() {
                             <div className="right-col">
                                 <div className="title">{faqPage.aside_title}</div>
                                 <p>{faqPage.aside_descr}</p>
-                                <a href={faqPage.aside_link} className="btn">{faqPage.aside_link_text}</a>
+                                <Link to={faqPage.aside_link} className="btn">{faqPage.aside_link_text}</Link>
 
                             </div>
                         </aside>

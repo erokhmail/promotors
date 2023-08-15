@@ -1,0 +1,63 @@
+    {
+        "logo_alt": "Promotors logo",
+        "col_1_descr": "Drive with confidence. Your trusted partner in auto maintenance and repair.",
+        "col_1_sup": "Support center 24/7",
+        "col_2_title": "About us",
+        "about": [
+                {
+                    "title": "About us",
+                    "link": "about"
+                },
+                {
+                    "title": "Our team",
+                    "link": "team"
+                },
+                {
+                    "title": "Services",
+                    "link": "services"
+                },
+                {
+                    "title": "FAQ",
+                    "link": "faq"
+                }
+            ],
+        "col_3_title": "Popular services",
+        "pop_serv": [
+                {
+                    "title": "Brake repair",
+                    "link": "services/single-service"
+                },
+                {
+                    "title": "Tire repair",
+                    "link": "services/single-service"
+                },
+                {
+                    "title": "Engine repair",
+                    "link": "services/single-service"
+                },
+                {
+                    "title": "Charging repair",
+                    "link": "services/single-service"
+                },
+                {
+                    "title": "Cooling system",
+                    "link": "services/single-service"
+                },
+                {
+                    "title": "Wheel alignment",
+                    "link": "services/single-service"
+                },
+                {
+                    "title": "Battery starting",
+                    "link": "services/single-service"
+                },
+                {
+                    "title": "Suspension repair",
+                    "link": "services/single-service"
+                }
+            ],
+            
+        "col_4_title": "Subscribe",
+        "copyright": "Promotors © All rights reserved Copyrights 2023"
+    }
+    

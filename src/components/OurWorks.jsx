@@ -5,7 +5,7 @@ function OurWorks() {
     const [awork, setAWork] = useState([]);
 
     useEffect(() => {
-        fetch('/data/aWork.json')
+        fetch('data/aWork.json')
             .then(resp => resp.json())
             .then(resp => {
                 setAWork(resp);

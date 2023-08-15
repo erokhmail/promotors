@@ -14,7 +14,7 @@ function About() {
     const [about, setAbout] = useState({});
 
     useEffect(() => {
-        fetch('/data/aboutData.json')
+        fetch('data/aboutData.json')
             .then(resp => resp.json())
             .then(resp => {
                 setAbout(resp);

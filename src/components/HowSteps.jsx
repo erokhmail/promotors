@@ -4,7 +4,7 @@ function HowSteps() {
     const [howSteps, setHowSteps] = useState({});
 
     useEffect(() => {
-        fetch('/data/howSteps.json')
+        fetch('data/howSteps.json')
             .then(resp => resp.json())
             .then(resp => {
                 setHowSteps(resp);

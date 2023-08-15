@@ -15,7 +15,7 @@ function Home() {
     const [homeData, setHomeData] = useState({});
 
     useEffect(() => {
-        fetch('/data/HomeData.json')
+        fetch('data/HomeData.json')
             .then(resp => resp.json())
             .then(resp => {
                 setHomeData(resp);

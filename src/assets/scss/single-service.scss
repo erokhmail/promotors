@@ -110,6 +110,29 @@ $aktsent: #D16527;
             width: 100%;
             position: relative;
         }
+
+        .form-element {
+            &.has-error {
+                position: relative;
+
+                input[type=text],
+                input[type=email],
+                input[type=tel],
+                input[type=number],
+                textarea {
+                    border-bottom: 1px solid $aktsent;
+                }
+
+                .input-error {
+                    color: $aktsent;
+                    @include fz(15);
+                    position: absolute;
+                    bottom: -30px;
+                }
+
+            }
+        }
+
     }
 
 

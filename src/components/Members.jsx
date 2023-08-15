@@ -10,7 +10,7 @@ function Members() {
     const [membersData, setmembersData] = useState([]);
 
     useEffect(() => {
-        fetch('/data/membersData.json')
+        fetch('data/membersData.json')
             .then(resp => resp.json())
             .then(resp => {
                 setmembersData(resp);

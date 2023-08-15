@@ -4,7 +4,7 @@ function ServicesListPage() {
     const [servPage, setservPage] = useState([]);
 
     useEffect(() => {
-        fetch('/data/servListPageData.json')
+        fetch('data/servListPageData.json')
             .then(resp => resp.json())
             .then(resp => {
                 setservPage(resp);

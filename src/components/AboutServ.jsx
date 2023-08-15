@@ -5,7 +5,7 @@ function AboutServ() {
     const [aservises, setAServices] = useState([]);
 
     useEffect(() => {
-        fetch('/data/aServices.json')
+        fetch('data/aServices.json')
             .then(resp => resp.json())
             .then(resp => {
                 setAServices(resp);

@@ -144,9 +144,13 @@ $aktsent: #D16527;
     min-width: 171px;
   }
 
+  .footer-form {
+    margin-top: -6px;
+  }
+
   .form-element {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 26px;
     position: relative;
 
     @media screen and (max-width: 480px) {
@@ -175,7 +179,7 @@ $aktsent: #D16527;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
-      text-transform: capitalize;
+      text-transform: none;
       width: 100%;
       background-color: transparent;
       border: 0;
@@ -188,22 +192,32 @@ $aktsent: #D16527;
       }
 
       &::placeholder {
-        color: #C2C2C2;
+        color: #454545;
       }
     }
 
-
-    .has-err {
+    &.has-error {
+      position: relative;
 
       input[type=text],
-      input[type=email] {
-        border-color: red;
-
-        &::placeholder {
-          color: red;
-        }
+      input[type=email],
+      input[type=tel],
+      input[type=number],
+      textarea {
+        border-bottom: 1px solid $aktsent;
       }
+
+      .input-error {
+        color: $aktsent;
+        @include fz(15);
+        position: absolute;
+        bottom: -24px;
+      }
+
     }
+
+
+
 
   }
 

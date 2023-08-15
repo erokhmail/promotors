@@ -4,7 +4,7 @@ import ky from "ky";
 import { toast } from "react-toastify";
 import AsideNewsItem from "./AsideNewsItem";
 
-const isDev = true;
+const isDev = false;
 
 function AsideNewsLine() {
     const [asideNewsLine, setAsideNewsLine] = useState([]);

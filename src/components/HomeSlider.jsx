@@ -8,7 +8,7 @@ function HomeSlider() {
     const [sliders, setSliders] = useState([]);
 
     useEffect(() => {
-        fetch('/data/slider.json')
+        fetch('data/slider.json')
             .then(resp => resp.json())
             .then(resp => {
                 setSliders(resp);
@@ -20,7 +20,6 @@ function HomeSlider() {
         dots: true,
         lazyLoad: true,
         infinite: true,
-        // fade: true,
         speed: 2000,
         slidesToShow: 1,
         slidesToScroll: 1,

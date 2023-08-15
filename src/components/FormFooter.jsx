@@ -6,11 +6,9 @@ import InputField from "./InputField";
 import CommonErrors from "../helpers/CommonErrors";
 
 
-function FormFull() {
+function FormFooter() {
     const [values, setValues] = useState({
-        name: '',
-        phone: '',
-        message: ''
+        email: ''
     })
 
     const [errors, setError] = useState([]);
@@ -25,23 +23,18 @@ function FormFull() {
         }
     }
 
-    function isValidPhone(phone) {
-        const regex = /^\+380\d{9}$/;
-        return regex.test(phone);
+    function isValidPhone(email) {
+        const regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return regex.test(email);
     }
 
     function validate(values) {
         const errors = {}
-        if (values.name === '')
-            errors.name = 'Please enter your name'
 
-        if (values.phone === '')
-            errors.phone = 'Please enter your phone number'
-        else if (!isValidPhone(values.phone))
-            errors.phone = 'Invalid phone number'
-
-        if (values.message === '')
-            errors.message = 'Please enter your message'
+        if (values.email === '')
+            errors.email = 'Please enter your email '
+        else if (!isValidPhone(values.email))
+            errors.email = 'Invalid email address'
 
         return errors
     }
@@ -61,9 +54,7 @@ function FormFull() {
 
 
         const text = `
-<b>Name:</b> ${values.name}
-<b>Phone:</b> ${values.phone}
-<b>Message:</b> ${values.message}
+<b>Request to subscribe:</b> ${values.email}
       `;
 
         const formData = new FormData();
@@ -79,9 +70,7 @@ function FormFull() {
             if (resp.ok) {
                 toast.success('Thanks! Your request successfully sent', { theme: "dark" })
                 setValues({
-                    name: '',
-                    phone: '',
-                    message: ''
+                    email: ''
                 })
             }
         } catch ({ response }) {
@@ -92,16 +81,14 @@ function FormFull() {
 
     }
     return (
-        <form className="c-form" onSubmit={submitHandler}>
-            <InputField multy={false} label="Your name" name="name" value={values.name} placeholder="John Doe" change={changeHandler} blur={blurHandler} error={errors.name || ''} />
-            <InputField multy={false} label="Your phone" name="phone" value={values.phone} placeholder="+380970000000" change={changeHandler} blur={blurHandler} error={errors.phone || ''} />
-            <InputField multy={true} label="Your message" name="message" value={values.message} placeholder="I need some service..." change={changeHandler} blur={blurHandler} error={errors.message || ''} />
+        <form className="c-form footer-form" onSubmit={submitHandler}>
+            <InputField multy={false} label="Your email" name="email" value={values.email} placeholder="jdoe@gmail.com" change={changeHandler} blur={blurHandler} error={errors.email || ''} />
 
             <div className="btn-link">
-                <button type="submit" className="btn" disabled={disabled}>Send</button>
+                <button type="submit" className="btn" disabled={disabled}>Subscribe</button>
             </div>
         </form>
     )
 }
 
-export default FormFull
+export default FormFooter

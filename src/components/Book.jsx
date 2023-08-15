@@ -1,28 +1,15 @@
 import { useEffect, useState } from "react";
-import Swal from "sweetalert2";
 import FormFull from "./FormFull";
+import Popup from "./Popup";
+
+
 
 function Book({ addClass }) {
     const [book, setBook] = useState({});
-    const handleClick = ({ }) => {
-        Swal.fire({
-            title: '<div className="h2-title">Book your Service Today</div>',
-            html: { FormFull },
-            showCloseButton: true,
-            showCancelButton: false,
-            confirmButtonText: 'Save',
-            focusConfirm: false,
-        }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
-            if (result.isConfirmed) {
-                Swal.fire('Saved!', '', 'success')
-            }
-
-        })
-    }
+    const [triggerPopup, setTriggerPopup] = useState(false)
 
     useEffect(() => {
-        fetch('/data/book.json')
+        fetch('data/book.json')
             .then(resp => resp.json())
             .then(resp => {
                 setBook(resp);
@@ -37,15 +24,13 @@ function Book({ addClass }) {
                     <div className="container content">
                         <h2 className="h2-title">{book.title}</h2>
                         <div className="descrip">{book.descr}</div>
-                        <button type="button" className="btn" id="open-popup" onClick={handleClick}>{book.button}</button>
+                        <button type="button" className="btn" id="open-popup" onClick={() => setTriggerPopup(true)} >{book.button}</button>
                     </div>
                 </div>
             </section>
-            <div id="popup__bg">
-                <div className="popup container">
-
-                </div>
-            </div>
+            <Popup trigger={triggerPopup} setTrigger={setTriggerPopup}>
+                <FormFull />
+            </Popup>
         </>
     )
 }

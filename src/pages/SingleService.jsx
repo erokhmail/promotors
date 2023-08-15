@@ -14,7 +14,7 @@ function SingleService() {
     const [singleServ, setSingleServ] = useState({});
 
     useEffect(() => {
-        fetch('/data/singleServ.json')
+        fetch('data/singleServ.json')
             .then(resp => resp.json())
             .then(resp => {
                 setSingleServ(resp);

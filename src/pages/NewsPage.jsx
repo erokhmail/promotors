@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import NewsLine from "../components/NewsLine";
-import AsideNewsLine from "../components/AsideNewsLine";
+// import AsideNewsLine from "../components/AsideNewsLine";
 
 import './../assets/scss/news-page.scss'
 
@@ -10,7 +10,7 @@ function NewsPage() {
     const [newsData, setNewsData] = useState({});
 
     useEffect(() => {
-        fetch('/data/newsData.json')
+        fetch('data/newsData.json')
             .then(resp => resp.json())
             .then(resp => {
                 setNewsData(resp);
@@ -32,18 +32,12 @@ function NewsPage() {
                 </div>
             </section>
 
-            <div id="news-section">
+            <div id="news-section" className="full-page">
                 <div className="container">
                     <div className="serv-cont">
                         <div className="news-list">
                             <NewsLine />
                         </div>
-                        <aside>
-                            <div className="filter-post">
-                                <AsideNewsLine />
-
-                            </div>
-                        </aside>
                     </div>
 
                 </div>

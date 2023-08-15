@@ -8,7 +8,7 @@ function Team() {
     const [teamData, setTeamData] = useState({});
 
     useEffect(() => {
-        fetch('/data/teamData.json')
+        fetch('data/teamData.json')
             .then(resp => resp.json())
             .then(resp => {
                 setTeamData(resp);

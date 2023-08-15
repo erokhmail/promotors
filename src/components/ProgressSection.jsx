@@ -33,7 +33,7 @@ function ProgressSection() {
     }, [completed_1, completed_2, value_1, value_2]);
 
     useEffect(() => {
-        fetch('/data/progressData.json')
+        fetch('data/progressData.json')
             .then(resp => resp.json())
             .then(resp => {
                 setProgressData(resp);
