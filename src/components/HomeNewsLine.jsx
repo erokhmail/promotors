@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import NewsItem from "./NewsItem";
 
 
-const isDev = false;
+const isDev = true;
 
 function HomeNewsLine() {
     const [newsLine, setHomeNewsLine] = useState([]);
@@ -56,7 +56,9 @@ function HomeNewsLine() {
                     <h2 className="h2-title">Latest news</h2>
 
                     <div className="news-block">
-                        {newsLine.map(item => <NewsItem item={item} key={item.id} />)}
+                        {newsLine
+                            .sort((a, b) => new Date(b.publish_date) - new Date(a.publish_date))
+                            .map(item => <NewsItem item={item} key={item.id} />)}
                     </div>
                 </div>
             </section>

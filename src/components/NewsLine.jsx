@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import NewsItem from "./NewsItem";
 import ReactPaginate from 'react-paginate';
 
-const isDev = false;
+const isDev = true;
 
 function NewsLine() {
     const [newsLine, setNewsLine] = useState([]);
@@ -49,7 +49,7 @@ function NewsLine() {
     }, []);
 
     const endOffset = itemOffset + itemsPerPage;
-    const currentItems = newsLine.slice(itemOffset, endOffset);
+    const currentItems = newsLine.slice(itemOffset, endOffset).sort((a, b) => new Date(b.publish_date) - new Date(a.publish_date));;
     const pageCount = Math.ceil(newsLine.length / itemsPerPage);
 
     const handlePageClick = (event) => {

@@ -17,7 +17,7 @@ function OurWorks() {
             {awork.map((item, index) => {
                 return (
                     <div className="work-item" key={index}>
-                        <Link href={item.link} className="link-wrap"></Link>
+                        <Link to={item.link} className="link-wrap"></Link>
                         <div className="item-work">
                             <div className="img-w-wrap">
                                 <img src={item.img} alt={item.title} />

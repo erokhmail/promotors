@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BOT_TOKEN, CHAT_ID, TELEGRAM_API } from "../env"
+import { BOT_TOKEN, CHAT_ID, TELEGRAM_API } from "../env";
 import ky from "ky";
 import { toast } from "react-toastify";
 import InputField from "./InputField";
@@ -85,7 +85,8 @@ function FormFull() {
                 })
             }
         } catch ({ response }) {
-            toast.error(CommonErrors(response.status), { theme: "dark" })
+            toast.error(errorMessages(response))
+            // toast.error(CommonErrors(response.status), { theme: "dark" })
         } finally {
             setDisabled(false)
         }

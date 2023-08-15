@@ -123,6 +123,17 @@ $aktsent: #D16527;
 
       @media screen and (max-width: 768px) {
         aspect-ratio: 3/4;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          background-color: rgba(0, 0, 0, .5);
+          height: 100%;
+          width: 100%;
+          top: 0;
+          left: 0;
+        }
       }
     }
 
@@ -454,15 +465,17 @@ $aktsent: #D16527;
         margin-bottom: 10px;
       }
 
-      // svg {
-
-      // }
       .img-svg {
         width: 50px;
         height: 53px;
         position: relative;
         top: 50%;
         transform: translateY(-50%);
+
+        @media screen and (max-width: 450px) {
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
 
         img {
           object-fit: contain;

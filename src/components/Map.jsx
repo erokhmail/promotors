@@ -24,7 +24,7 @@ function Map() {
                     <MapContainer center={coords} zoom={15} scrollWheelZoom={true}>
                         <TileLayer
                             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
-                            url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}.png"
+                            url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}.png?api_key=fe19169d-45e8-450e-96d4-aa9900515de6"
                         />
                         <Marker position={coords} icon={customMarker}>
                         </Marker>

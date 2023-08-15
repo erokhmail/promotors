@@ -4,7 +4,7 @@ import ky from "ky";
 import { toast } from "react-toastify";
 import AsideNewsItem from "./AsideNewsItem";
 
-const isDev = false;
+const isDev = true;
 
 function AsideNewsLine() {
     const [asideNewsLine, setAsideNewsLine] = useState([]);
@@ -37,7 +37,7 @@ function AsideNewsLine() {
 
         } catch (err) {
             console.log(err)
-            toast.error('something went wrong');
+            toast.error('something went wrong', { theme: dark });
         }
 
 
