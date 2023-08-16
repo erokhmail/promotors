@@ -5,9 +5,6 @@ import Footer from "../components/Footer"
 
 import './../assets/scss/style.scss'
 
-
-
-
 function Default() {
     return (
         <>

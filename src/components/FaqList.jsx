@@ -4,8 +4,6 @@ import chevronUp from "../assets/images/icons/shevron-up.svg";
 import { useState, useEffect } from 'react';
 
 
-
-
 function FaqList({ jsonDataPath }) {
     const [faq, setFaq] = useState([]);
     const AccordionItem = ({ header, ...rest }) => (
