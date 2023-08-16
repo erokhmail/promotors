@@ -10,7 +10,7 @@ import FaqList from '../components/FaqList';
 
 
 function SingleService() {
-    const faqJsonPath = '/data/faq.json';
+    const faqJsonPath = 'data/faq.json';
     const [singleServ, setSingleServ] = useState({});
 
     useEffect(() => {
